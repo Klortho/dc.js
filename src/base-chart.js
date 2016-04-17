@@ -170,7 +170,7 @@ dc.baseChart = function (_chart) {
         var data = arr ? arr : _chart.group().all().slice(0); // clone
         if(data.length < 2)
             return data;
-        var sort = crossfilter.quicksort.by(_chart.ordering());
+        var sort = quicksort.by(_chart.ordering());
         return sort(data,0,data.length);
     };
 
@@ -413,6 +413,10 @@ dc.baseChart = function (_chart) {
     _chart.hasFilter = function (filter) {
         if (!arguments.length) return _filters.length > 0;
         return _filters.indexOf(filter) >= 0;
+    };
+
+    _chart.clearFilter=function() {
+        _filters = [];
     };
 
     function removeFilter(_) {

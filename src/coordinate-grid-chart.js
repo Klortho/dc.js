@@ -693,7 +693,8 @@ dc.coordinateGridChart = function (_chart) {
             });
         } else {
             dc.events.trigger(function () {
-                _chart.filter(null);
+                if(!dc.useRemoteData)_chart.filter(null);
+                else _chart.clearFilter(); //this will reset the filters stored in the chart, without fire the redraw event
                 _chart.filter([extent[0], extent[1]]);
                 dc.redrawAll(_chart.chartGroup());
             }, dc.constants.EVENT_DELAY);

@@ -70,7 +70,7 @@ dc.dataTable = function(parent, chartGroup) {
 
     function nestEntries() {
         if (!_sort)
-            _sort = crossfilter.quicksort.by(_sortBy);
+            _sort = quicksort.by(_sortBy);
 
         var entries = _chart.dimension().top(_size);
 

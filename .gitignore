@@ -20,3 +20,11 @@ node_modules
 
 # files for gh-pages
 .grunt
+
+# product files
+/singular-dc.js
+/singular-dc.js.map
+/singular-dc.min.js
+/singular-dc.min.js.map
+/web/js/singular-dc.js
+/web/js/singular-dc.js.map

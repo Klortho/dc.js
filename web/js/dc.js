@@ -16,7 +16,7 @@
  *  limitations under the License.
  */
 
-(function() { function _dc(d3, crossfilter) {
+(function() { function _dc(d3) {
 'use strict';
 
 /**
@@ -811,7 +811,7 @@ dc.baseChart = function (_chart) {
         var data = arr ? arr : _chart.group().all().slice(0); // clone
         if(data.length < 2)
             return data;
-        var sort = crossfilter.quicksort.by(_chart.ordering());
+        var sort = quicksort.by(_chart.ordering());
         return sort(data,0,data.length);
     };
 
@@ -1054,6 +1054,10 @@ dc.baseChart = function (_chart) {
     _chart.hasFilter = function (filter) {
         if (!arguments.length) return _filters.length > 0;
         return _filters.indexOf(filter) >= 0;
+    };
+
+    _chart.clearFilter=function() {
+        _filters = [];
     };
 
     function removeFilter(_) {
@@ -2133,7 +2137,8 @@ dc.coordinateGridChart = function (_chart) {
             });
         } else {
             dc.events.trigger(function () {
-                _chart.filter(null);
+                if(!dc.useRemoteData)_chart.filter(null);
+                else _chart.clearFilter(); //this will reset the filters stored in the chart, without fire the redraw event
                 _chart.filter([extent[0], extent[1]]);
                 dc.redrawAll(_chart.chartGroup());
             }, dc.constants.EVENT_DELAY);
@@ -3917,7 +3922,7 @@ dc.dataTable = function(parent, chartGroup) {
 
     function nestEntries() {
         if (!_sort)
-            _sort = crossfilter.quicksort.by(_sortBy);
+            _sort = quicksort.by(_sortBy);
 
         var entries = _chart.dimension().top(_size);
 
@@ -5400,21 +5405,12 @@ dc.numberDisplay = function (parent, chartGroup) {
 
 return dc;}
     if(typeof define === "function" && define.amd) {
-        define(["d3", "crossfilter"], _dc);
+        define(["d3"], _dc);
     } else if(typeof module === "object" && module.exports) {
         var _d3 = require('d3');
-        var _crossfilter = require('crossfilter');
-        // When using npm + browserify, 'crossfilter' is a function,
-        // since package.json specifies index.js as main function, and it
-        // does special handling. When using bower + browserify,
-        // there's no main in bower.json (in fact, there's no bower.json),
-        // so we need to fix it.
-        if (typeof _crossfilter !== "function") {
-            _crossfilter = _crossfilter.crossfilter;
-        }
-        module.exports = _dc(_d3, _crossfilter);
+        module.exports = _dc(_d3);
     } else {
-        this.dc = _dc(d3, crossfilter);
+        this.dc = _dc(d3);
     }
 }
 )();

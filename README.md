@@ -34,11 +34,15 @@ Make sure the following packages are installed on your machine
 
 ### Install dependencies
 
-dc.js$ npm install
+```
+npm install
+```
 
 ### Build and Test
 
-dc.js$ ./make
+```
+grunt
+```
 
 
 License
