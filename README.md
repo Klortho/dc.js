@@ -1,8 +1,11 @@
-[![Build Status](https://secure.travis-ci.org/NickQiZhu/dc.js.png)](http://travis-ci.org/NickQiZhu/dc.js)
-[![NPM Status](https://badge.fury.io/js/dc.png)](http://badge.fury.io/js/dc)
+singular-dc
+===========
 
-dc.js
-=====
+Fork of the popular dc.js charting library, with fewer dependencies. This library
+was forked from version 1.7.5 of dc.js. The rest of this readme file is from 
+the original.
+
+
 
 Dimensional charting built to work natively with crossfilter rendered using d3.js. Check out
 [example page](http://nickqizhu.github.com/dc.js/) with a quick five minutes how to guide. For
@@ -38,11 +41,23 @@ Make sure the following packages are installed on your machine
 npm install
 ```
 
-### Build and Test
+### Build
+
+By default, `grunt` does not run the tests.
 
 ```
 grunt
 ```
+
+To run the tests, use
+
+```
+grunt test
+```
+
+But note that as of now, they are failing. We haven't had time to investigate, 
+but since this was forked from an old version, and lots of dependencies have 
+changed since that was released, there are any number of possible causes.
 
 
 License

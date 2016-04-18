@@ -29,6 +29,8 @@
     "d3": "3.x"
   },
   "devDependencies": {
+    "crossfilter": "^1.3.12",
+    "docco": "^0.7.0",
     "emu": "~0.0.2",
     "grunt": "~0.4.1",
     "grunt-contrib-concat": "~0.5.0",
@@ -40,7 +42,9 @@
     "grunt-gh-pages": "~0.7.1",
     "grunt-markdown": "https://github.com/willkan/grunt-markdown/tarball/master",
     "grunt-sed": "~0.1.1",
+    "grunt-vows": "^0.4.2",
     "jquery": "^2.2.3",
+    "jsdom": "^8.4.0",
     "sinon": "1.7.x",
     "uglify-js": "2.4.x",
     "vows": "0.7.x"

@@ -1,6 +1,6 @@
 {
-  "name": "dcjs",
-  "version": "1.7.0",
+  "name": "singular-dc",
+  "version": "1.7.6-singular",
   "main": ["dc.js", "dc.css"],
   "ignore": [
     ".gitignore",
@@ -15,7 +15,6 @@
     "wiki"
   ],
   "dependencies": {
-    "d3": "3.x",
-    "crossfilter": "1.x"
+    "d3": "3.x"
   }
 }
