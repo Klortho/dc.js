@@ -1,10 +1,9 @@
 {
   "name": "singular-dc",
-  "filename": "dc.min.js",
   "version": "1.7.6-singular",
   "license": "Apache-2.0",
   "copyright": "2014",
-  "description": "A fork of dc.js; a multi-dimensional charting library built to work natively with crossfilter and rendered using d3.js ",
+  "description": "A fork of the dc.js charting library, with fewer dependencies",
   "keywords": [
     "visualization",
     "svg",
@@ -12,18 +11,27 @@
     "canvas",
     "chart",
     "dimensional",
-    "crossfilter",
     "d3"
   ],
-  "homepage": "http://dc-js.github.io/dc.js/",
-  "bugs": "https://github.com/dc-js/dc.js/issues",
+  "bugs": "https://github.com/ncbi/singular-dc/issues",
   "author": {
     "name": "Nick Zhu",
     "url": "http://nzhu.blogspot.ca/"
   },
+  "scripts": {
+    "test": "./node_modules/vows/bin/vows"
+  },
+  "files": [
+    "singular-dc.css",
+    "singular-dc.js",
+    "singular-dc.js.map",
+    "singular-dc.min.css",
+    "singular-dc.min.js",
+    "singular-dc.min.js.map"
+  ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/dc-js/dc.js.git"
+    "url": "https://github.com/ncbi/singular-dc.git"
   },
   "dependencies": {
     "d3": "3.x"
@@ -48,22 +56,5 @@
     "sinon": "1.7.x",
     "uglify-js": "2.4.x",
     "vows": "0.7.x"
-  },
-  "scripts": {
-    "test": "./node_modules/vows/bin/vows"
-  },
-  "npmName": "dc",
-  "npmFileMap": [
-    {
-      "basePath": "/",
-      "files": [
-        "dc.css",
-        "dc.min.css",
-        "dc.min.js",
-        "dc.min.js.map",
-        "dc.js",
-        "dc.js.map"
-      ]
-    }
-  ]
+  }
 }

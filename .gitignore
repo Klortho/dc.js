@@ -23,8 +23,7 @@ node_modules
 
 # product files
 /singular-dc.js
-/singular-dc.js.map
-/singular-dc.min.js
-/singular-dc.min.js.map
+/singular-dc.min.*
+/singular-dc.*map
 /web/js/singular-dc.js
 /web/js/singular-dc.js.map
