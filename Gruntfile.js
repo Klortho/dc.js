@@ -83,14 +83,13 @@ module.exports = function (grunt) {
         copy: {
             'dc-to-gh': {
                 files: [
-                    { expand: true, flatten: true, src: 'dc.css', dest: 'web/css/'},
+                    { expand: true, flatten: true, src: 'singular-dc.css', dest: 'web/css/'},
                     { expand: true,
                       flatten: true,
                       src: [output.js,
                             output.js + ".map",
                             'node_modules/jquery/tmp/jquery.js',
                             'node_modules/d3/d3.js',
-                            'node_modules/crossfilter/crossfilter.js',
                             'test/env-data.js'],
                       dest: 'web/js/'
                     }
@@ -136,6 +135,7 @@ module.exports = function (grunt) {
 
 module.exports.jsFiles = [
     "src/banner.js",
+    "src/crossfilter_1.3.7_quicksort_modified.js",
     "src/core.js",
     "src/errors.js",
     "src/utils.js",

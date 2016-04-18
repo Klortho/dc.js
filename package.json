@@ -1,6 +1,6 @@
 {
   "name": "singular-dc",
-  "version": "1.7.6-singular",
+  "version": "1.7.6-singular3",
   "license": "Apache-2.0",
   "copyright": "2014",
   "description": "A fork of the dc.js charting library, with fewer dependencies",

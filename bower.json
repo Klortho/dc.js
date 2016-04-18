@@ -1,7 +1,7 @@
 {
   "name": "singular-dc",
-  "version": "1.7.6-singular",
-  "main": ["dc.js", "dc.css"],
+  "version": "1.7.6-singular3",
+  "main": ["singular-dc.js", "singular-dc.css"],
   "ignore": [
     ".gitignore",
     ".travis.yml",
